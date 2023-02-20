@@ -5,6 +5,5 @@
         // Mandatory
         // Array of routes
         public ProviderTwoRouteDto[]? Routes { get; set; }
-
     }
 }

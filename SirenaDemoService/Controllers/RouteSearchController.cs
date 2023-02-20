@@ -16,7 +16,7 @@ namespace SirenaDemoService.Controllers
         }
 
         [HttpPost(Name = "GetRoutes")]
-        public async Task<IEnumerable<SearchResponseDto>> GetRoutes(GetRoutesQuery query)
+        public async Task<SearchResponseDto> GetRoutes(GetRoutesQuery query)
         {
             return await _mediator.Send(query);
         }

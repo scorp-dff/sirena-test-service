@@ -2,6 +2,11 @@
 {
     public class RouteDto
     {
+        public RouteDto()
+        {
+            Id = Guid.NewGuid();
+        }
+
         // Mandatory
         // Identifier of the whole route
         public Guid Id { get; set; }

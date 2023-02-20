@@ -21,6 +21,15 @@ namespace Application.Common.Mappings
                 .ForMember(m => m.Arrival, opt => opt.MapFrom(m => m.Destination))
                 .ForMember(m => m.DepartureDate, opt => opt.MapFrom(m => m.OriginDateTime))                
                 .ForMember(m => m.MinTimeLimit, opt => opt.MapFrom(m => m.Filters.MinTimeLimit));
+
+            CreateMap<ProviderOneRouteDto, RouteDto>()
+                .ForMember(m => m.Origin, opt => opt.MapFrom(m => m.From))
+                .ForMember(m => m.Destination, opt => opt.MapFrom(m => m.To))
+                .ForMember(m => m.OriginDateTime, opt => opt.MapFrom(m => m.DateFrom))
+                .ForMember(m => m.DestinationDateTime, opt => opt.MapFrom(m => m.DateTo))
+                .ForMember(m => m.Price, opt => opt.MapFrom(m => m.Price))
+                .ForMember(m => m.TimeLimit, opt => opt.MapFrom(m => m.TimeLimit))
+                .ForMember(m => m.Id, opt => opt.Ignore());
         }
     }
 }
